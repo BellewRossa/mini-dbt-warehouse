@@ -22,30 +22,22 @@ Each layer progressively improves data quality and usability.
 
 ## Model Lineage (dbt DAG)
 
-dbt automatically builds a dependency graph of all models.
-The DAG below shows how raw data flows through staging models, dimensional tables, and analytics marts.
+dbt automatically builds a dependency graph of all models.  
+The diagram below shows how raw data flows through staging, dimensional models, and analytics marts.
 
-![Warehouse DAG](docs/warehousedag.png)
+![Warehouse DAG](dbt/mini_warehouse/docs/warehousedag.png)
 
-Pipeline flow:
+### Pipeline Flow
 
-raw tables
-   ↓
-stg_customers
-stg_products
-stg_orders
-stg_order_items
-   ↓
-dim_customers
-dim_products
-fact_order_items
-   ↓
-mart_daily_revenue
-mart_customer_ltv
-mart_top_products
-Technologies
+Raw tables  
+↓  
+Staging models (`stg_*`)  
+↓  
+Dimensional models (`dim_*`, `fact_*`)  
+↓  
+Analytics marts (`mart_*`)
 
-DuckDB (local analytical database)
+## DuckDB (local analytical database)
 
 dbt-core
 
@@ -126,7 +118,7 @@ Columns:
 
     fact_order_items
 
-Grain:
+# Grain:
 
     1 row per order_id + product_id
 
@@ -212,7 +204,7 @@ Columns:
 
     rank_by_revenue
 
-Ranking uses:
+# Ranking uses:
 
     DENSE_RANK() OVER (ORDER BY revenue DESC)
     Running the Pipeline
@@ -228,7 +220,7 @@ Then run dbt:
     dbt test
 Preview Analytics Outputs
 
-Example:
+# Example:
 
 dbt show --select mart_daily_revenue --limit 10
 
@@ -240,7 +232,7 @@ date	total_revenue	total_orders	aov
 2026-03-03	65	1	65
 Concepts Demonstrated
 
-This project demonstrates:
+# This project demonstrates:
 
     analytics engineering workflows
 
