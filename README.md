@@ -1,10 +1,10 @@
-Mini Data Warehouse (DuckDB + dbt)
+# Mini Data Warehouse (DuckDB + dbt)
 
 This project implements a small end-to-end analytics warehouse using DuckDB and dbt. Raw e-commerce data is ingested from CSV files, transformed through a staged cleaning layer, modelled into a dimensional schema, and exposed through analytics marts.
 
 The project demonstrates a typical analytics engineering workflow and modern data transformation practices.
 
-Architecture
+## Architecture
 
 The warehouse follows a layered transformation architecture:
 
@@ -20,7 +20,7 @@ Analytics Marts
 
 Each layer progressively improves data quality and usability.
 
-Model Lineage (dbt DAG)
+## Model Lineage (dbt DAG)
 
 dbt automatically builds a dependency graph of all models.
 The DAG below shows how raw data flows through staging models, dimensional tables, and analytics marts.
@@ -55,39 +55,39 @@ SQL
 
 VS Code
 
-Project Structure
+## Project Structure
 mini-warehousev1
 │
 ├─ data/
-│   ├─ customers.csv
-│   ├─ products.csv
-│   ├─ orders.csv
-│   └─ order_items.csv
+│ ├─ customers.csv
+│ ├─ products.csv
+│ ├─ orders.csv
+│ └─ order_items.csv
 │
 ├─ scripts/
-│   └─ load_raw.py
+│ └─ load_raw.py
 │
 ├─ docs/
-│   └─ warehousedag.png
+│ └─ warehousedag.png
 │
-├─ dbt/
-│   └─ mini_warehouse/
-│       ├─ models/
-│       │   ├─ silver/
-│       │   │   ├─ stg_customers.sql
-│       │   │   ├─ stg_products.sql
-│       │   │   ├─ stg_orders.sql
-│       │   │   └─ stg_order_items.sql
-│       │   │
-│       │   ├─ gold/
-│       │   │   ├─ dim_customers.sql
-│       │   │   ├─ dim_products.sql
-│       │   │   └─ fact_order_items.sql
-│       │   │
-│       │   └─ marts/
-│       │       ├─ mart_daily_revenue.sql
-│       │       ├─ mart_customer_ltv.sql
-│       │       └─ mart_top_products.sql
+└─ dbt/
+└─ mini_warehouse/
+└─ models/
+├─ silver/
+│ ├─ stg_customers.sql
+│ ├─ stg_products.sql
+│ ├─ stg_orders.sql
+│ └─ stg_order_items.sql
+│
+├─ gold/
+│ ├─ dim_customers.sql
+│ ├─ dim_products.sql
+│ └─ fact_order_items.sql
+│
+└─ marts/
+├─ mart_daily_revenue.sql
+├─ mart_customer_ltv.sql
+└─ mart_top_products.sql
 Data Model
 
 The warehouse uses a star schema.
