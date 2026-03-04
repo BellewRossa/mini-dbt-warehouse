@@ -1,0 +1,6 @@
+order_id,customer_id,order_ts,status
+O1001,C001,2026-03-01 10:15:00,completed
+O1002,C002,2026-03-01 12:30:00,completed
+O1003,C003,2026-03-02 09:00:00,refunded
+O1004,C004,2026-03-03 18:45:00,cancelled
+O1005,C001,2026-03-03 19:10:00,completed

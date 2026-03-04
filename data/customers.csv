@@ -1,0 +1,6 @@
+customer_id,first_seen_date,country,email
+C001,2026-03-01,IE,rossa@example.com
+C002,2026-03-01,IE,
+C003,2026-03-02,UK,ALICE@EXAMPLE.COM
+C003,2026-03-02,UK,alice@example.com
+C004,2026-03-03,US,bob@example.com

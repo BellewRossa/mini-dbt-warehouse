@@ -1,0 +1,15 @@
+# Python
+.venv/
+__pycache__/
+
+# dbt build artifacts
+target/
+logs/
+dbt_packages/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Database file
+warehouse.duckdb

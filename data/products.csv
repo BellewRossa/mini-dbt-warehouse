@@ -1,0 +1,5 @@
+product_id,product_name,category,unit_cost
+P001,Robot Wheel,Electronics,12.50
+P002,Servo Motor,electronics,8.00
+P003,Chassis Kit,Hardware,20.00
+P004,Weapon Spinner,hardware,35.00

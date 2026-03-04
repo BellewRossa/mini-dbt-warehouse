@@ -1,0 +1,17 @@
+version: 2 
+
+model:
+- name: mart_daily_revenue
+  columns:
+    - name: date 
+      tests: [not_null, unique]
+
+    - name: mart_customer_ltv
+      columns:
+        - name: customer_id
+          tests: [not_null, unique]
+
+    - name: mart_top_products
+      columns:
+        - name: product_id
+          tests: [not_null, unique]
