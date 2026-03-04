@@ -25,6 +25,8 @@ Each layer progressively improves data quality and usability.
 dbt automatically builds a dependency graph of all models.
 The DAG below shows how raw data flows through staging models, dimensional tables, and analytics marts.
 
+![Warehouse DAG](docs/warehousedag.png)
+
 Pipeline flow:
 
 raw tables
@@ -56,38 +58,34 @@ SQL
 VS Code
 
 ## Project Structure
-mini-warehousev1
-│
-├─ data/
-│ ├─ customers.csv
-│ ├─ products.csv
-│ ├─ orders.csv
-│ └─ order_items.csv
-│
-├─ scripts/
-│ └─ load_raw.py
-│
-├─ docs/
-│ └─ warehousedag.png
-│
-└─ dbt/
-└─ mini_warehouse/
-└─ models/
-├─ silver/
-│ ├─ stg_customers.sql
-│ ├─ stg_products.sql
-│ ├─ stg_orders.sql
-│ └─ stg_order_items.sql
-│
-├─ gold/
-│ ├─ dim_customers.sql
-│ ├─ dim_products.sql
-│ └─ fact_order_items.sql
-│
-└─ marts/
-├─ mart_daily_revenue.sql
-├─ mart_customer_ltv.sql
-└─ mart_top_products.sql
+
+```text
+mini-warehousev1/
+├── data/
+│   ├── customers.csv
+│   ├── products.csv
+│   ├── orders.csv
+│   └── order_items.csv
+├── scripts/
+│   └── load_raw.py
+├── docs/
+│   └── warehousedag.png
+└── dbt/
+    └── mini_warehouse/
+        └── models/
+            ├── silver/
+            │   ├── stg_customers.sql
+            │   ├── stg_products.sql
+            │   ├── stg_orders.sql
+            │   └── stg_order_items.sql
+            ├── gold/
+            │   ├── dim_customers.sql
+            │   ├── dim_products.sql
+            │   └── fact_order_items.sql
+            └── marts/
+                ├── mart_daily_revenue.sql
+                ├── mart_customer_ltv.sql
+                └── mart_top_products.sql
 Data Model
 
 The warehouse uses a star schema.
