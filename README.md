@@ -86,7 +86,9 @@ mini-warehousev1/
                 ├── mart_daily_revenue.sql
                 ├── mart_customer_ltv.sql
                 └── mart_top_products.sql
-Data Model
+```      
+
+## Data Model
 
 The warehouse uses a star schema.
 
